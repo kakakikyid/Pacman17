@@ -3,7 +3,8 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class Pacman extends JFrame implements Runnable, KeyListener {
-    private int angle = 0, iterasi=1, arrow = KeyEvent.VK_RIGHT;
+    private int angle = 0, arrow = KeyEvent.VK_RIGHT;
+    // iterasi=1;
     Body pacman, food;
 
     public Pacman(){
@@ -43,9 +44,9 @@ public void run() {
         move();
         repaint();
         try{
-            if (iterasi>=3)
-            Thread.sleep(10);
-            else
+            // if (iterasi>=3)
+            // Thread.sleep(10);
+            // else
             Thread.sleep(100);
         } catch (Exception e){
             System.out.println("Missing");
@@ -93,7 +94,7 @@ private void move(){
             int foodY = (int) (Math.random() * 19) + 1;
             food.setX(30 * foodX);
             food.setY(30 * foodY);
-            iterasi+=1;
+            // iterasi+=1;
             return true;
         }
         return false;
